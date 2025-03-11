@@ -9,8 +9,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://chater-firebase.vercel.app',
-    // origin: 'http://localhost:3000',
+    origin: ['https://chater-firebase.vercel.app', "http://localhost:3000"],
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS'] 
 }));
