@@ -16,7 +16,7 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get('/google/callback',
   // passport.authenticate('google', { failureRedirect: 'https://chater-v1.vercel.app/auth/login' }),
-  passport.authenticate('google', { failureRedirect: 'http://localhost:3000/auth/login' }),
+  passport.authenticate('google', { failureRedirect: 'https://chater-firebase.vercel.app/auth/login' }),
   (req, res) => {
 
     console.log('req passport:', req.user)
@@ -29,7 +29,7 @@ router.get('/google/callback',
       token
     };
     // const redirectUrl = `https://chater-v1.vercel.app/auth/google/callback?userData=${encodeURIComponent(JSON.stringify(userData))}`;
-    const redirectUrl = `http://localhost:3000/auth/google/callback?userData=${encodeURIComponent(JSON.stringify(userData))}`;
+    const redirectUrl = `https://chater-firebase.vercel.app/auth/google/callback?userData=${encodeURIComponent(JSON.stringify(userData))}`;
 
     // Redirect ke URL frontend dengan data pengguna
     res.redirect(redirectUrl);

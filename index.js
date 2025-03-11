@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const mongoose = require('mongoose');
-const { Server } = require('socket.io');
 const passport = require('passport');
 const session = require('express-session');
 
@@ -10,8 +9,8 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    // origin: 'https://chater-v1.vercel.app',
-    origin: 'http://localhost:3000',
+    origin: 'https://chater-firebase.vercel.app',
+    // origin: 'http://localhost:3000',
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS'] 
 }));
